@@ -30,7 +30,7 @@ object chupetin {
 	var peso = 7
 	method precio() { return 2 }
 	method peso() { return peso }
-	method mordisco() { if (not peso<2) peso = peso * 0.9 }
+	method mordisco() { if (peso>=2) peso = peso * 0.9 }
 	method gusto() { return "naranja" }
 	method libreGluten() { return true }
 }
@@ -56,6 +56,7 @@ object chocolatin {
 		pesoInicial = cuanto
 		pesoActual = cuanto
 	}
+	method peso() {return pesoActual}
 	method precio() { return pesoInicial * 0.5 }
 	method libreGluten() { return false }
 	method mordisco() { pesoActual = pesoActual - 2 }
@@ -84,8 +85,7 @@ object tuttifrutti {
 	var property libreGluten = false
 	method precio() { return if (libreGluten) 7 else 10}
 	method peso() { return peso }
-	method mordisco() { if (gusto == "frutilla") gusto == "chocolate" else if (gusto == "chocolate") gusto == "naranja" else gusto == "frutilla" }
-	method gusto() { return "gusto" }
-	method libreGluten() { return libreGluten }
+	method mordisco() { if (gusto == "frutilla") gusto = "chocolate" else if (gusto == "chocolate") gusto = "naranja" else gusto = "frutilla" }
+	method gusto() { return gusto }
 }
 

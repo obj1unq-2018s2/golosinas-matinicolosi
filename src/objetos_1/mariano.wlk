@@ -2,7 +2,7 @@ object mariano {
 	// para este objeto no damos pistas
 	// definimos algunos métodos para que compile el test
 	var property bolsaGolosinas = []
-	method comprar(golosina) { bolsaGolosinas = bolsaGolosinas.add(golosina) }
+	method comprar(golosina) { bolsaGolosinas.add(golosina) }
 	method desechar(golosina) { bolsaGolosinas.filter(golosina) }
 	method golosinas() {
 		/* cambiar por la implementacion correcta */ 

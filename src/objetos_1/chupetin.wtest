@@ -1,0 +1,14 @@
+import golosinas.*
+
+test "chupetin" {
+
+	assert.equals(7, chupetin.peso())
+	assert.equals(2, chupetin.precio())
+	assert.equals("naranja", chupetin.gusto())
+	assert.that(chupetin.libreGluten())
+	chupetin.mordisco()
+	assert.equals(6.3, chupetin.peso())
+	chupetin.mordisco()
+	assert.equals(5.67, chupetin.peso())
+
+}

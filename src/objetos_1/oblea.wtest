@@ -1,0 +1,16 @@
+import golosinas.*
+
+test "oblea" {
+
+	assert.equals(250, oblea.peso())
+	assert.equals(5, oblea.precio())
+	assert.equals("vainilla", oblea.gusto())
+	assert.that(not oblea.libreGluten())
+	oblea.mordisco()
+	assert.equals(125, oblea.peso())
+	oblea.mordisco()
+	assert.equals(62.5, oblea.peso())
+	oblea.mordisco()
+	assert.equals(46.875, oblea.peso())
+
+}
