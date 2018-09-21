@@ -18,6 +18,14 @@ describe "tests de mariano" {
 		assert.notThat(mariano.golosinas().contains(chupetin))
 	}
 	
+	test "test desechar" {
+		assert.equals(3, mariano.golosinas().size())
+		mariano.desechar(bombon)
+		assert.equals(2, mariano.golosinas().size())
+		mariano.comprar(bombon)
+		assert.equals(3, mariano.golosinas().size())
+	}
+	
 	test "probar golosinas" {
 		/* habilitar las lineas anuladas cuando se complete la definicion 
 		 * de las golosinas
@@ -36,27 +44,35 @@ describe "tests de mariano" {
 	}
 	
 	test "preciosCuidados()" {
-		assert.that(not mariano.preciosCuidados())
+		assert.notThat(mariano.preciosCuidados())
 	}
 	
 	test "golosinaSabor(unSabor)" {
-		assert.that(mariano.golosinaSabor("chocolate"))
+		assert.equals(caramelo, mariano.golosinaSabor("frutilla"))
 	}
 	
 	test "golosinasSabor(unSabor)" {
-		assert.that(not mariano.golosinasSabor("frutilla"))
+		assert.equals([caramelo, bombon], mariano.golosinasSabor("frutilla"))
 	}
 	
-	test "preciosCuidados()" {
-		assert.that(not mariano.preciosCuidados())
+	test "sabores()" {
+		assert.equals(["chocolate", "frutilla"], mariano.sabores())
 	}
 	
-	test "preciosCuidados()" {
-		assert.that(not mariano.preciosCuidados())
+	test "golosina mas cara()" {
+		assert.equals(chocolatin, mariano.golosinaMasCara())
 	}
 	
-	test "preciosCuidados()" {
-		assert.that(not mariano.preciosCuidados())
+	test "peso de golosinas()" {
+		assert.equals(120, mariano.pesoGolosinas())
+	}
+	
+	test "golosinas faltantes()" {
+		assert.equals([alfajor, chupetin], mariano.golosinasFaltantes([alfajor, bombon, chocolatin, chupetin]))
+	}
+	
+	test "gustos faltantes()" {
+		assert.equals(["melon", "vainilla"], mariano.gustosFaltantes(["melon", "chocolate", "frutilla", "vainilla"]))
 	}
 	
 }
